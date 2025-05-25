@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Terminal Blog</title>
+  <style>
+    /* Terminal appearance */
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      background: #000;
+      color: #f6faf5;
+      font-family: "DejaVu Sans Mono", "Liberation Mono", monospace;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    /* Loading text style */
+    #loading {
+      font-size: 24px;
+    }
+  </style>
+</head>
+<body>
+  <!-- The loading text element -->
+  <div id="loading">loading</div>
+
+  <script>
+    let dotCount = 0;
+    const maxDots = 3; // Maximum number of dots (loading...)
+    const loadingElement = document.getElementById('loading');
+
+    setInterval(() => {
+      // Increment the dot count, and reset to 0 after reaching 3
+      dotCount = (dotCount + 1) % (maxDots + 1);
+      // Update the text to "loading" plus the dots
+      loadingElement.textContent = "loading" + ".".repeat(dotCount);
+    }, 1000);
+  </script>
+</body>
+</html>
